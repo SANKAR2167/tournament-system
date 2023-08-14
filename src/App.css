@@ -220,3 +220,7 @@ table, th, td{
   align-items: center;
   justify-content: space-evenly;
 }
+
+.toolbar{
+  justify-content: space-between;
+}

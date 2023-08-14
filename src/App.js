@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CreateParticipant } from './components/ParticipantForm';
 import { CreateTournament } from './components/TournamentForm';
-import { AppBar, Button, Toolbar } from '@mui/material';
+import { AppBar, Button, IconButton, Toolbar } from '@mui/material';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { Home } from './components/Home';
 import './App.css';
@@ -12,6 +12,7 @@ import { MyTournaments } from './components/MyTournaments';
 import { EditTournament } from './components/EditTournament';
 import { MyGame } from './components/MyGame';
 import { EditParticipant } from './components/EditParticipant';
+import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
 
 function App() {
 
@@ -35,11 +36,14 @@ function App() {
     <div className="App">
       <AppBar position='fixed' sx={{ backgroundColor: "black" }}>
         <Toolbar className='toolbar'>
-          <Button className='menu' color='inherit' onClick={() => navigate(`/`)}>Home</Button>
-          <Button className='menu' color='inherit' onClick={() => navigate(`/tournamentlist`)}>Tournaments</Button>
-          <Button className='menu' color='inherit' onClick={() => navigate(`/mytournaments`)}>My Tournaments</Button>
-          <Button className='menu' color='inherit' onClick={() => navigate(`/mygames`)}>My Games</Button>
-          {hide ? (<Button className='menu' color='inherit' onClick={Logout}>Logout</Button>) : null}
+          <IconButton><SportsKabaddiIcon sx={{ color: "Yellow" }} /></IconButton>
+          <div className="nav-menu">
+            <Button className='menu' color='inherit' onClick={() => navigate(`/`)}>Home</Button>
+            <Button className='menu' color='inherit' onClick={() => navigate(`/tournamentlist`)}>Tournaments</Button>
+            <Button className='menu' color='inherit' onClick={() => navigate(`/mytournaments`)}>My Tournaments</Button>
+            <Button className='menu' color='inherit' onClick={() => navigate(`/mygames`)}>My Games</Button>
+            {hide ? (<Button className='menu' color='inherit' onClick={Logout}>Logout</Button>) : null}
+          </div>
         </Toolbar>
       </AppBar>
 
